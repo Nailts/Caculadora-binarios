@@ -39,3 +39,8 @@ function sumBinaryFractional(a, b) {
     const decimalResult = binaryToDecimal(a) + binaryToDecimal(b);
     return decimalToBinary(decimalResult);
 }
+
+function resBinaryFractional(a, b) {
+    const decimalResult = binaryToDecimal(a) - binaryToDecimal(b);
+    return decimalToBinary(decimalResult);
+}
