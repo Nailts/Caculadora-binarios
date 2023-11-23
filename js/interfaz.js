@@ -25,6 +25,10 @@ botones.forEach((boton) => {
       primerNumero = numeroEnPantalla;
       operacion = '-';
       numeroEnPantalla = '';
+    } else if (valorBoton === '*') {
+      primerNumero = numeroEnPantalla;
+      operacion = '*';
+      numeroEnPantalla = '';
     } else if (valorBoton === '=') {
       segundoNumero = numeroEnPantalla;
       if (operacion === '+' && primerNumero && segundoNumero) {
@@ -35,6 +39,12 @@ botones.forEach((boton) => {
         operacion = '';
       } else if (operacion === '-' && primerNumero && segundoNumero) {
         const resultado = resBinaryFractional(primerNumero, segundoNumero);
+        numeroEnPantalla = resultado;
+        primerNumero = resultado;
+        segundoNumero = '';
+        operacion = '';
+      } else if (operacion === '*' && primerNumero && segundoNumero) {
+        const resultado = mulBinaryFractional(primerNumero, segundoNumero);
         numeroEnPantalla = resultado;
         primerNumero = resultado;
         segundoNumero = '';
