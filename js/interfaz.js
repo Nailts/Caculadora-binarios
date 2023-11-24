@@ -29,6 +29,10 @@ botones.forEach((boton) => {
       primerNumero = numeroEnPantalla;
       operacion = '*';
       numeroEnPantalla = '';
+    }else if (valorBoton === '/') {
+      primerNumero = numeroEnPantalla;
+      operacion = '/';
+      numeroEnPantalla = '';
     } else if (valorBoton === '=') {
       segundoNumero = numeroEnPantalla;
       if (operacion === '+' && primerNumero && segundoNumero) {
@@ -50,8 +54,20 @@ botones.forEach((boton) => {
         segundoNumero = '';
         operacion = '';
       }
+      else if (operacion === '/' && primerNumero && segundoNumero) {
+        const resultado = divBinaryFractional(primerNumero, segundoNumero);
+        numeroEnPantalla = resultado;
+        primerNumero = resultado;
+        segundoNumero = '';
+        operacion = '';
+      }
     } else {
       numeroEnPantalla += valorBoton;
+    }
+
+    const MAX_DIGITOS_PANTALLA = 15; 
+    if (numeroEnPantalla.length > MAX_DIGITOS_PANTALLA) {
+      numeroEnPantalla = numeroEnPantalla.slice(0, MAX_DIGITOS_PANTALLA);
     }
 
     pantalla.textContent = numeroEnPantalla;

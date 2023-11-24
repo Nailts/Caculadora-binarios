@@ -49,3 +49,8 @@ function mulBinaryFractional(a, b) {
     const decimalResult = binaryToDecimal(a) * binaryToDecimal(b);
     return decimalToBinary(decimalResult);
 }
+
+function divBinaryFractional(a, b) {
+    const decimalResult = binaryToDecimal(a) / binaryToDecimal(b);
+    return decimalToBinary(decimalResult);
+}
