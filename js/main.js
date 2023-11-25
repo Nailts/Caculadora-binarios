@@ -61,3 +61,10 @@ function powBinaryFractional(a, b) {
     const decimalResult = Math.pow(decimalBase, decimalExponente);
     return decimalToBinary(decimalResult);
 }
+
+function sqrtBinary(a, b) {
+    const decimalRadicando = binaryToDecimal(a);
+    const decimalIndice = binaryToDecimal(b);
+    const decimalResult = Math.pow(decimalRadicando, 1 / decimalIndice);
+    return decimalToBinary(decimalResult);
+}
