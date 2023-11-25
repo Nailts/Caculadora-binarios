@@ -54,3 +54,10 @@ function divBinaryFractional(a, b) {
     const decimalResult = binaryToDecimal(a) / binaryToDecimal(b);
     return decimalToBinary(decimalResult);
 }
+
+function powBinaryFractional(a, b) {
+    const decimalBase = binaryToDecimal(a);
+    const decimalExponente = binaryToDecimal(b);
+    const decimalResult = Math.pow(decimalBase, decimalExponente);
+    return decimalToBinary(decimalResult);
+}

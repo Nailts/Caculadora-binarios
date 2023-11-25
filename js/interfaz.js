@@ -33,7 +33,11 @@ botones.forEach((boton) => {
       primerNumero = numeroEnPantalla;
       operacion = '/';
       numeroEnPantalla = '';
-    } else if (valorBoton === '=') {
+    }else if (valorBoton == '^'){
+      primerNumero = numeroEnPantalla;
+      operacion = '^';
+      numeroEnPantalla = '';
+    }else if (valorBoton === '=') {
       segundoNumero = numeroEnPantalla;
       if (operacion === '+' && primerNumero && segundoNumero) {
         const resultado = sumBinaryFractional(primerNumero, segundoNumero);
@@ -53,9 +57,14 @@ botones.forEach((boton) => {
         primerNumero = resultado;
         segundoNumero = '';
         operacion = '';
-      }
-      else if (operacion === '/' && primerNumero && segundoNumero) {
+      }else if (operacion === '/' && primerNumero && segundoNumero) {
         const resultado = divBinaryFractional(primerNumero, segundoNumero);
+        numeroEnPantalla = resultado;
+        primerNumero = resultado;
+        segundoNumero = '';
+        operacion = '';
+      }else if (operacion === '^' && primerNumero && segundoNumero) {
+        const resultado = powBinaryFractional(primerNumero, segundoNumero);
         numeroEnPantalla = resultado;
         primerNumero = resultado;
         segundoNumero = '';
