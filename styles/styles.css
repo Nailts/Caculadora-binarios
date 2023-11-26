@@ -35,6 +35,18 @@ body {
     font-weight: 600;
 }
 
+.pantallaDecimal {
+    grid-column: 1 / -1;
+    background-color: #180931;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: right;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-weight: 600;
+}
+
 .btn {
     background-color: #372366;;
     color: white;
